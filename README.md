@@ -1,3 +1,5 @@
+
+
 # @hestjs/core
 
 <div align="center">
@@ -202,15 +204,17 @@ HestJS Core 包含以下主要模块：
 
 ### 🏭 应用工厂
 
-#### `HestFactory.create(moduleClass)`
+#### `HestFactory.create(honoInstance, moduleClass)`
 
 创建应用实例的静态方法。
 
 ```typescript
 import { HestFactory } from "@hestjs/core";
+import { Hono } from "hono";
 import { AppModule } from "./app.module";
 
-const app = await HestFactory.create(AppModule);
+const hono = new Hono();
+const app = await HestFactory.create(hono, AppModule);
 ```
 
 ### 🎮 控制器装饰器
